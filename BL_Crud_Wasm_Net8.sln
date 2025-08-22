@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_Crud_Wasm_Net8", "BL_Crud_Wasm_Net8\BL_Crud_Wasm_Net8\BL_Crud_Wasm_Net8.csproj", "{42883C47-B28D-40F4-887F-66A095FADE72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_Crud_Wasm_Net8.Client", "BL_Crud_Wasm_Net8\BL_Crud_Wasm_Net8.Client\BL_Crud_Wasm_Net8.Client.csproj", "{0A36B17C-468C-4732-A962-95E0C4661B50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42883C47-B28D-40F4-887F-66A095FADE72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42883C47-B28D-40F4-887F-66A095FADE72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42883C47-B28D-40F4-887F-66A095FADE72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42883C47-B28D-40F4-887F-66A095FADE72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A36B17C-468C-4732-A962-95E0C4661B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A36B17C-468C-4732-A962-95E0C4661B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A36B17C-468C-4732-A962-95E0C4661B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A36B17C-468C-4732-A962-95E0C4661B50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {932FBB80-B75F-463E-8CA9-505499136933}
+	EndGlobalSection
+EndGlobal
