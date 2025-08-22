@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_Crud_Wasm_Net8", "BL_Cru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_Crud_Wasm_Net8.Client", "BL_Crud_Wasm_Net8\BL_Crud_Wasm_Net8.Client\BL_Crud_Wasm_Net8.Client.csproj", "{0A36B17C-468C-4732-A962-95E0C4661B50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL_Crud_Wasm_Net8.Shared", "BL_Crud_Wasm_Net8.Shared\BL_Crud_Wasm_Net8.Shared.csproj", "{A535F1EA-6731-42AA-98B2-45593E6D6C27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0A36B17C-468C-4732-A962-95E0C4661B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A36B17C-468C-4732-A962-95E0C4661B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A36B17C-468C-4732-A962-95E0C4661B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A535F1EA-6731-42AA-98B2-45593E6D6C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A535F1EA-6731-42AA-98B2-45593E6D6C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A535F1EA-6731-42AA-98B2-45593E6D6C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A535F1EA-6731-42AA-98B2-45593E6D6C27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
