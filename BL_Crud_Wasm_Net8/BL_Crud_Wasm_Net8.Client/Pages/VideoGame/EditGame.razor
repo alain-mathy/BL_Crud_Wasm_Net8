@@ -1,0 +1,66 @@
+﻿@page "/editgame"
+@page "/editgame/{id:int}"
+@using BL_Crud_Wasm_Net8.Shared.Entities
+@inject HttpClient Http
+@inject NavigationManager NavMan
+@rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
+
+@if (Id == null)
+{
+    <h3>Add Game</h3>
+}
+else
+{
+    <h3>Edit @Game.Title</h3>
+}
+
+<EditForm Model="Game" OnSubmit="HandleSubmit">
+    <div>
+        <label for="title">Title</label>
+        <InputText id="title" @bind-Value="Game.Title" class="form-control" />
+    </div>
+    <div>
+        <label for="publisher">Publisher</label>
+        <InputText id="publisher" @bind-Value="Game.Publisher" class="form-control" />
+    </div>
+    <div>
+        <label for="releaseYear">Release Year</label>
+        <InputNumber id="releaseYear" @bind-Value="Game.ReleaseYear" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</EditForm>
+
+@code {
+    [Parameter]
+    public int? Id { get; set; }
+
+    private VideoGame Game { get; set; } = new VideoGame();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Id is not null)
+        {
+            var result = await Http.GetFromJsonAsync<VideoGame>($"api/videogame/{(int)Id}");
+            if (result is not null)
+            {
+                Game = result;
+            }
+        }
+    }
+
+    async Task HandleSubmit()
+    {
+        if (Id is not null)
+        {
+            var result = await Http.PutAsJsonAsync($"api/videogame/{Id}", Game);
+            Game = await result.Content.ReadFromJsonAsync<VideoGame>();
+        }
+        else
+        {
+            var result = await Http.PostAsJsonAsync($"api/videogame", Game);
+            Game = await result.Content.ReadFromJsonAsync<VideoGame>();
+        }
+
+        NavMan.NavigateTo("listvideogame");
+    }
+}

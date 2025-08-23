@@ -1,6 +1,7 @@
 ﻿@page "/listvideogame"
 @using BL_Crud_Wasm_Net8.Shared.Entities
 @inject HttpClient Http
+@inject NavigationManager NavMan
 @rendermode @(new InteractiveWebAssemblyRenderMode(prerender: false))
 
 <PageTitle>List Video Game</PageTitle>
@@ -19,6 +20,7 @@ else
                 <th>Publisher</th>
                 <th>Release Year</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -28,18 +30,41 @@ else
                     <td>@videoGame.Title</td>
                     <td>@videoGame.Publisher</td>
                     <td>@videoGame.ReleaseYear</td>
-                    <td></td>
+                    <td><button class="btn btn-primary" @onclick="(() => EditGame(videoGame.Id))">Edit</button></td>
+                    <td><button class="btn btn-danger" @onclick="(() => DeleteGame(videoGame.Id))">Delete</button></td>
                 </tr>
             }
         </tbody>
     </table>
 }
-
+<button class="btn btn-primary" @onclick="AddGame">Add a new game</button>
 
 @code {
     List<VideoGame> videoGames = new List<VideoGame>();
 
     protected override async Task OnInitializedAsync()
+    {
+        await LoadGames();
+    }
+
+    void AddGame()
+    {
+        NavMan.NavigateTo("editgame");
+    }
+
+    void EditGame(int id)
+    {
+        NavMan.NavigateTo($"editgame/{id}");
+    }
+
+    async Task DeleteGame(int id)
+    {
+        await Http.DeleteAsync($"api/videogame/{id}");
+        await LoadGames();
+
+    }
+
+    async Task LoadGames()
     {
         var result = await Http.GetFromJsonAsync<List<VideoGame>>("api/videogame");
         if (result is not null)
